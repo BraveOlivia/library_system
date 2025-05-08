@@ -1,5 +1,5 @@
 import sys
-print (sys.argv[3])
+# print (sys.argv)
 
 
 class Book:
@@ -18,12 +18,13 @@ books=[]
 def add_book(id,title,author,year):
     book=Book(id,title,author,year)
     books.append(book)
-    return books
+    return book
 
 def borrow_book(id):
     for book in books:
         if str(book.id)==id and book.available==True:
             book.available = False
+            return book
             
 
 def return_book(id):
@@ -36,10 +37,10 @@ def list_available():
         if book.available == True:
             print(book)
 # book=Book(123,"harry potter","JK rowing",2011)
-add_book(123,"harry potter","JK rowing",2011)
-add_book("124","mindset","unkown",2014)
-print(books)
-print("........")
-list_available()
-borrow_book("123")
-list_available()
+# add_book(123,"harry potter","JK rowing",2011)
+# add_book("124","mindset","unkown",2014)
+# print(books)
+# print("........")
+# list_available()
+# borrow_book("123")
+# list_available()
